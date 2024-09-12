@@ -1,0 +1,35 @@
+-- Crear la base de datos
+CREATE DATABASE IF NOT EXISTS dbclientes;
+USE dbclientes;
+
+-- Crear la tabla `client`
+CREATE TABLE IF NOT EXISTS client (
+  ClientID int(11) NOT NULL AUTO_INCREMENT,
+  Name varchar(100) DEFAULT NULL,
+  Tel varchar(15) DEFAULT NULL,
+  DUI varchar(10) DEFAULT NULL,
+  Mail varchar(255) DEFAULT NULL,
+  Address varchar(255) DEFAULT NULL,
+  PRIMARY KEY (ClientID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Insertar datos en la tabla `client`
+INSERT INTO client (Name, Tel, DUI, Mail, Address) VALUES
+('Carlos Perez', '77231234', '12547893', 'carlos.perez@example.com', 'Colonia Los Robles'),
+('Laura Martinez', '78124567', '23764589', 'laura.martinez@example.com', 'Avenida Central'),
+('Miguel Lopez', '76239847', '98652314', 'miguel.lopez@example.com', 'Residencial La Palma'),
+('Ana Gomez', '79874512', '45678932', 'ana.gomez@example.com', 'Calle Las Flores');
+
+-- Crear la tabla `usuario`
+CREATE TABLE IF NOT EXISTS usuario (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nombre varchar(100) DEFAULT NULL,
+  username varchar(100) DEFAULT NULL,
+  pwd varchar(100) DEFAULT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Insertar datos en la tabla `usuario`
+INSERT INTO usuario (nombre, username, pwd) VALUES
+('Josue Montoya', 'JosueM', MD5('123')),
+('Sandra Lopez', 'slopez', MD5('123'));
