@@ -1,0 +1,45 @@
+body {
+    background-image: url('../resources/img/fondo1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.form-control {
+    background: rgba(0, 0, 0, 0.6);
+    border-style: none;
+    color: white;
+}
+
+.form-control:focus {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.btn-custom {
+    background-color: #0062cc;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+    transition: 0.3s;
+}
+
+.olvide {
+    color: white;
+}
+
+.olvide:hover {
+    color: cornflowerblue;
+    transition: 0.3s;
+}

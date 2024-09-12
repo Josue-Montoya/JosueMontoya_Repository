@@ -1,0 +1,57 @@
+body {
+    background-image: url('../resources/img/fondo1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1; 
+    padding: 0;
+    height: 100vh; 
+}
+
+.container {
+    max-width: 600px; 
+    margin: 0 auto;
+    padding-top: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    top: 50px;
+}
+
+.btn-custom {
+    background-color: #0062cc;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+    transition: 0.3s;
+}
+
+.btn-salir {
+    background-color: #dc3545; 
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px; 
+    margin-left: 0.3rem;
+}
+
+.btn-salir:hover {
+    background-color: #c82333;
+    transition: 0.3s;
+}
+
+.button-container {
+    margin-top: 20px; 
+    display: flex;
+    justify-content: space-between; 
+}
+
+.form-group input[type="text"], 
+.form-group select, 
+.form-group input[type="number"] {
+    width: 100%; 
+}

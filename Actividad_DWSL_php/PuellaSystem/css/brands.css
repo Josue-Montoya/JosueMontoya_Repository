@@ -1,0 +1,80 @@
+body {
+    background-image: url('../resources/img/fondo1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.btn-custom {
+    background-color: #0062cc;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+    transition: 0.3s;
+}
+
+.btn-marca {
+    background-color: #007bff;
+}
+
+.btn-salir {
+    background-color: #dc3545;
+}
+
+.btn-marca:hover, .btn-salir:hover {
+    opacity: 0.8;
+}
+
+.d-flex > a {
+    margin-right: 10px;
+}
+
+.table-custom {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.table-custom thead th {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.table-custom tbody tr {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.table-custom tbody tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.table-custom td, .table-custom th {
+    border: none;
+}
+
+.btn-outline-info {
+    color: #0062cc;
+    border-color: #0062cc;
+}
+
+.btn-outline-info:hover {
+    background-color: #0062cc;
+    color: white;
+    transition: 0.3s;
+}
