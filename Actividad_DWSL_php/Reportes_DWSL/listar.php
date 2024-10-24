@@ -9,7 +9,7 @@ $opcion = isset($_POST['opcion']) ? $_POST['opcion'] : null;
 
 $producto = isset($_POST['producto']) ? $_POST['producto'] : null;
 $proveedor = isset($_POST['proveedor']) ? $_POST['proveedor'] : null;
-$fechaVencimiento = isset($_POST['fechaVencimiento']) ? $_POST['fechaVencimiento'] : null;
+$fechaVencimiento = isset($_POST['vencimiento']) ? $_POST['vencimiento'] : null;
 
 
 $reports = [];

@@ -12,8 +12,8 @@ create table tbl_invesproduct (
 );
 
 DELIMITER ;;
-CREATE PROCEDURE sp_FiltrarPorFechaVencimiento(
-	IN fechaVencimiento DATE
+Create PROCEDURE sp_FiltrarPorFechaVencimiento(
+	IN fechaVencimiento Varchar(50)
 )
 BEGIN
 	SELECT 
