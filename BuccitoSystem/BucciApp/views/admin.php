@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['user'] == "") {
+if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
     header("Location: ../../index.php");
     exit();
 }
@@ -66,13 +66,14 @@ if ($_SESSION['user'] == "") {
                         </a>
                         <div class="collapse" id="collapseLayouts" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="./inventory/indexInventory.php">Ver Inventario</a>
                                 <a class="nav-link" href="./Sales/indexSales.php">Ventas</a>
                                 <a class="nav-link" href="./Sales/salesHistory.php">Historial de Ventas</a>
+                                <a class="nav-link" href="./inventory/indexInventory.php">Ver Inventario</a>
                                 <?php if ($_SESSION['user'] == "administrador"): ?>
-                                    <a class="nav-link" href="./Graphics/salesAnalytics.php">Análisis de Ventas</a>
-                                    <a class="nav-link" href="./Buys/indexBuy.php">Entrada de Productos</a>
                                     <a class="nav-link" href="./admin.php">Crear Productos</a>
+                                    <a class="nav-link" href="./Buys/indexBuy.php">Entrada de Productos</a>
+                                    <a class="nav-link" href="./Graphics/salesAnalytics.php">Análisis de Ventas</a>
+                                    <a class="nav-link" href="./users/indexUser.php">Gestionar Usuarios</a>
                                 <?php endif; ?>
                             </nav>
                         </div>

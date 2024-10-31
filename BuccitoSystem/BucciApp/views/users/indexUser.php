@@ -6,14 +6,32 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
 }
 ?>
 
+<?php if (isset($_SESSION['success'])): ?>
+    <div class="alert alert-success">
+        <?php 
+        echo $_SESSION['success'];
+        unset($_SESSION['success']);
+        ?>
+    </div>
+<?php endif; ?>
+
+<?php if (isset($_SESSION['error'])): ?>
+    <div class="alert alert-danger">
+        <?php 
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+        ?>
+    </div>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bucci - Compras</title>
-    <!-- Estilos y fuentes -->
+    <title>Bucci - Gestión de Usuarios</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
@@ -22,15 +40,15 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
 </head>
 
 <body class="sb-nav-fixed">
-    <!-- Barra de navegación -->
+    <!-- Top Navigation Bar -->
     <nav class="sb-topnav navbar navbar-expand navbar-dark">
         <a class="navbar-brand ps-3" href="#">Bucci</a>
-        <button class="btn btn-link btn-sm order-lg-0 me-4 me-lg-0" id="sidebarToggle">
+        <button class="btn btn-link btn-sm order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
         </button>
         <ul class="navbar-nav ms-auto me-3">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown">
                     <i class="fas fa-user fa-fw"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -45,7 +63,9 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
         </ul>
     </nav>
 
+    <!-- Main Layout -->
     <div id="layoutSidenav">
+        <!-- Sidebar Navigation -->
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
@@ -76,60 +96,66 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
             </nav>
         </div>
 
+        <!-- Main Content -->
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid">
-                    <h1 class="mt-4">Lista de Compras</h1>
-                    <div class="table-actions mb-3">
-                        <div id="tableButtons"></div>
-                        <div id="tableSearch" class="float-end"></div>
-                        <?php if ($_SESSION["user"] == "administrador") { ?>
-                            <a href="../../views/Buys/addBuy.php" class="btn btn-success">
-                                <i class="fas fa-plus"></i> Nueva Compra
-                            </a>
-                        <?php } ?>
-                    </div>
-
-                    <table class="table table-striped table-bordered" id="purchaseTable">
-                        <thead>
-                            <tr>
-                                <th>ID Compra</th>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Fecha de Compra</th>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Gestión de Usuarios</h1>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="table-actions mb-3">
+                                <div id="tableButtons"></div>
+                                <div id="tableSearch" class="float-end"></div>
                                 <?php if ($_SESSION["user"] == "administrador") { ?>
-                                    <th>Acciones</th>
+                                    <a href="../../views/users/addUser.php" class="btn btn-success">
+                                        <i class="fas fa-plus"></i> Nuevo Usuario
+                                    </a>
                                 <?php } ?>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            include '../../controllers/Buys/indexBuyController.php';
-                            foreach ($purchases as $purchase): ?>
-                                <tr>
-                                    <td><?php echo $purchase['id_compra']; ?></td>
-                                    <td><?php echo $purchase['producto']; ?></td>
-                                    <td><?php echo $purchase['cantidad']; ?></td>
-                                    <td><?php echo $purchase['fecha_compra']; ?></td>
-                                    <?php if ($_SESSION["user"] == "administrador") { ?>
-                                        <td>
-                                            <a href="../../controllers/Buys/getBuyById.php?action=edit&id=<?php echo $purchase['id_compra']; ?>" class="btn btn-primary btn-action">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                            <a href="../../controllers/Buys/getBuyById.php?action=delete&id=<?php echo $purchase['id_compra']; ?>" class="btn btn-danger btn-action" onclick="return confirm('¿Está seguro de eliminar esta compra?')">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                        </td>
-                                    <?php } ?>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            </div>
 
+                            <table class="table table-striped table-bordered" id="usersTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Usuario</th>
+                                        <th>Rol</th>
+                                        <?php if ($_SESSION["user"] == "administrador") { ?>
+                                            <th>Acciones</th>
+                                        <?php } ?>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    include '../../controllers/Users/indexUserController.php';
+                                    foreach ($users as $user): ?>
+                                        <tr>
+                                            <td><?php echo $user['id_usuario']; ?></td>
+                                            <td><?php echo $user['nombre']; ?></td>
+                                            <td><?php echo $user['usuario']; ?></td>
+                                            <td><?php echo $user['nombre_rol']; ?></td>
+                                            <?php if ($_SESSION["user"] == "administrador") { ?>
+                                                <td>
+                                                    <a href="../../controllers/Users/getUserContoller.php?action=edit&id=<?php echo $user['id_usuario']; ?>" class="btn btn-primary btn-action">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <a href="../../controllers/Users/getUserContoller.php?action=delete&id=<?php echo $user['id_usuario']; ?>" class="btn btn-danger btn-action" onclick="return confirm('¿Está seguro de eliminar este usuario?')">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                            <?php } ?>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </main>
+
+            <!-- Footer -->
             <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid">
+                <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
                         <div class="text-muted">Copyright © Bucci System 2024</div>
                         <div>
@@ -148,13 +174,15 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+
+    <!-- DataTable Initialization -->
     <script>
         $(document).ready(function() {
-            var table = $('#purchaseTable').DataTable({
+            var table = $('#usersTable').DataTable({
                 dom: 'Bfrtip',
                 buttons: [{
                         extend: 'csv',
@@ -174,7 +202,7 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
                 ],
                 language: {
                     search: "_INPUT_",
-                    searchPlaceholder: "Buscar compras...",
+                    searchPlaceholder: "Buscar usuarios...",
                     lengthMenu: "Mostrar _MENU_ registros por página",
                     zeroRecords: "No se encontraron resultados",
                     info: "Mostrando página _PAGE_ de _PAGES_",
@@ -196,13 +224,17 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
             });
         });
 
-        document.getElementById('sidebarToggle').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.body.classList.toggle('sb-sidenav-toggled');
+        // Sidebar Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.body.classList.toggle('sb-sidenav-toggled');
+                });
+            }
         });
     </script>
-
-
 </body>
 
 </html>

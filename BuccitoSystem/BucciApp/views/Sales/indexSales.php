@@ -2,7 +2,7 @@
 <?php
 session_start();
 if ($_SESSION['user'] == "") {
-    header("Location: ../../index.php");
+    header("Location: ../../../index.php");
     exit();
 }
 ?>
@@ -64,14 +64,15 @@ if ($_SESSION['user'] == "") {
                             </div>
                         </a>
                         <div class="collapse" id="collapseLayouts" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="../../views/inventory/indexInventory.php">Ver Inventario</a>
+                            <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="../../views/Sales/indexSales.php">Ventas</a>
                                 <a class="nav-link" href="../../views/Sales/salesHistory.php">Historial de Ventas</a>
+                                <a class="nav-link" href="../../views/inventory/indexInventory.php">Ver Inventario</a>
                                 <?php if ($_SESSION['user'] == "administrador"): ?>
-                                    <a class="nav-link" href="../../views/Graphics/salesAnalytics.php">Análisis de Ventas</a>
-                                    <a class="nav-link" href="../../views/Buys/indexBuy.php">Entrada de Productos</a>
                                     <a class="nav-link" href="../../views/admin.php">Crear Productos</a>
+                                    <a class="nav-link" href="../../views/Buys/indexBuy.php">Entrada de Productos</a>
+                                    <a class="nav-link" href="../../views/Graphics/salesAnalytics.php">Análisis de Ventas</a>
+                                    <a class="nav-link" href="../../views/users/indexUser.php">Gestionar Usuarios</a>
                                 <?php endif; ?>
                             </nav>
                         </div>
