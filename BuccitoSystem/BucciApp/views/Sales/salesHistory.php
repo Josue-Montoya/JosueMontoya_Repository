@@ -1,15 +1,12 @@
-<!-- views/sales/salesHistory.php -->
 <?php
 session_start();
-if ($_SESSION['user'] == "") {
+if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
     header("Location: ../../../index.php");
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,9 +16,7 @@ if ($_SESSION['user'] == "") {
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../../css/styles.css">
 </head>
-
 <body class="sb-nav-fixed">
-    <!-- Navegación -->
     <nav class="sb-topnav navbar navbar-expand navbar-dark">
         <a class="navbar-brand ps-3" href="#">Bucci</a>
         <button class="btn btn-link btn-sm order-lg-0 me-4 me-lg-0" id="sidebarToggle">
@@ -43,7 +38,6 @@ if ($_SESSION['user'] == "") {
             </li>
         </ul>
     </nav>
-
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -74,12 +68,10 @@ if ($_SESSION['user'] == "") {
                 </div>
             </nav>
         </div>
-
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Historial de Ventas</h1>
-
                     <!-- Filtros -->
                     <div class="card mb-4">
                         <div class="card-body">
@@ -99,7 +91,6 @@ if ($_SESSION['user'] == "") {
                             </div>
                         </div>
                     </div>
-
                     <!-- Tabla de Ventas -->
                     <div class="card mb-4">
                         <div class="card-header">
@@ -120,7 +111,6 @@ if ($_SESSION['user'] == "") {
                         </div>
                     </div>
                 </div>
-
                 <!-- Modal de Detalles -->
                 <div class="modal fade" id="saleDetailsModal" tabindex="-1">
                     <div class="modal-dialog modal-lg">
@@ -155,7 +145,6 @@ if ($_SESSION['user'] == "") {
             </main>
         </div>
     </div>
-
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -202,7 +191,6 @@ if ($_SESSION['user'] == "") {
                     url: 'https://cdn.datatables.net/plug-ins/1.13.8/i18n/es-ES.json'
                 }
             });
-
             // Manejador para el botón de filtrar
             $('#filterSales').click(function() {
                 let dateFrom = $('#dateFrom').val();
@@ -210,11 +198,9 @@ if ($_SESSION['user'] == "") {
 
                 table.ajax.url('../../controllers/Sales/getSales.php?from=' + dateFrom + '&to=' + dateTo).load();
             });
-
             // Ver detalles de venta
             $(document).on('click', '.view-details', function() {
                 let saleId = $(this).data('id');
-
                 $.ajax({
                     url: '../../controllers/Sales/getSaleDetails.php',
                     method: 'GET',
@@ -228,7 +214,6 @@ if ($_SESSION['user'] == "") {
                             let tbody = $('#saleDetailsBody');
                             tbody.empty();
                             let total = 0;
-
                             details.forEach(function(item) {
                                 let subtotal = parseFloat(item.subtotal);
                                 total += subtotal;
@@ -241,7 +226,6 @@ if ($_SESSION['user'] == "") {
                             </tr>
                         `);
                             });
-
                             $('#modalTotal').text('$' + total.toFixed(2));
                             $('#saleDetailsModal').modal('show');
                         } else {
@@ -257,5 +241,4 @@ if ($_SESSION['user'] == "") {
         });
     </script>
 </body>
-
 </html>

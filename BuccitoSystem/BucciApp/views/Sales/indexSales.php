@@ -1,15 +1,12 @@
-<!-- views/sales/indexSales.php -->
 <?php
 session_start();
-if ($_SESSION['user'] == "") {
+if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
     header("Location: ../../../index.php");
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,20 +16,12 @@ if ($_SESSION['user'] == "") {
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="../../css/styles.css">
 </head>
-
 <body class="sb-nav-fixed">
-    <!-- Mantén la misma estructura de navegación que tenías -->
-
     <nav class="sb-topnav navbar navbar-expand navbar-dark">
-        <!-- Logo -->
         <a class="navbar-brand ps-3" href="#">Bucci</a>
-
-        <!-- Sidebar Toggle -->
         <button class="btn btn-link btn-sm order-lg-0 me-4 me-lg-0" id="sidebarToggle">
             <i class="fas fa-bars"></i>
         </button>
-
-        <!-- Navbar-->
         <ul class="navbar-nav ms-auto me-3">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +38,6 @@ if ($_SESSION['user'] == "") {
             </li>
         </ul>
     </nav>
-
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -80,7 +68,6 @@ if ($_SESSION['user'] == "") {
                 </div>
             </nav>
         </div>
-
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
@@ -97,8 +84,6 @@ if ($_SESSION['user'] == "") {
                             <div id="productResults" class="mt-3"></div>
                         </div>
                     </div>
-
-                    <!-- Carrito de Compras -->
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-shopping-cart me-1"></i>
@@ -131,11 +116,8 @@ if ($_SESSION['user'] == "") {
                 </div>
             </main>
         </div>
-
-        <!-- Scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
         <script>
             $(document).ready(function() {
                 let cart = [];
@@ -159,14 +141,11 @@ if ($_SESSION['user'] == "") {
                         $('#productResults').html('');
                     }
                 });
-
-                // Cuando se selecciona un producto de la lista
                 $(document).on('click', '.select-product', function(e) {
                     e.preventDefault();
                     let productId = $(this).data('id');
                     let productName = $(this).data('name');
                     let price = parseFloat($(this).data('price'));
-
                     // Verificar si el producto ya está en el carrito
                     let existingProduct = cart.find(item => item.productId === productId);
                     if (existingProduct) {
@@ -180,21 +159,17 @@ if ($_SESSION['user'] == "") {
                             quantity: 1
                         });
                     }
-
                     // Actualizar la tabla del carrito
                     updateCartTable();
-
                     // Limpiar la búsqueda y resultados
                     $('#searchProduct').val('');
                     $('#productResults').html('');
                 });
-
                 // Actualizar carrito
                 function updateCartTable() {
                     let tbody = $('#cartTable tbody');
                     tbody.empty();
                     let total = 0;
-
                     cart.forEach((item, index) => {
                         let subtotal = item.price * item.quantity;
                         total += subtotal;
@@ -219,7 +194,6 @@ if ($_SESSION['user'] == "") {
 
                     $('#totalAmount').text(`$${total.toFixed(2)}`);
                 }
-
                 // Actualizar cantidad
                 $(document).on('change', '.quantity-input', function() {
                     let index = $(this).data('index');
@@ -229,24 +203,20 @@ if ($_SESSION['user'] == "") {
                         updateCartTable();
                     }
                 });
-
                 // Eliminar item
                 $(document).on('click', '.remove-item', function() {
                     let index = $(this).data('index');
                     cart.splice(index, 1);
                     updateCartTable();
                 });
-
                 // Completar venta
                 $('#completeSale').click(function() {
                     if (cart.length === 0) {
                         alert('El carrito está vacío');
                         return;
                     }
-
                     // Deshabilitar el botón mientras se procesa
                     $(this).prop('disabled', true);
-
                     $.ajax({
                         url: '../../controllers/Sales/processSale.php',
                         method: 'POST',
@@ -277,5 +247,4 @@ if ($_SESSION['user'] == "") {
             });
         </script>
 </body>
-
 </html>

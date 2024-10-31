@@ -5,10 +5,8 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,17 +20,14 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark">
         <!-- Logo -->
         <a class="navbar-brand ps-3" href="#">Bucci</a>
-
         <!-- Sidebar Toggle -->
         <button class="btn btn-link btn-sm order-lg-0 me-4 me-lg-0" id="sidebarToggle">
             <i class="fas fa-bars"></i>
         </button>
-
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto me-3">
             <li class="nav-item dropdown">
@@ -50,7 +45,6 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
             </li>
         </ul>
     </nav>
-
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -95,7 +89,6 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
                             </a>
                         <?php } ?>
                     </div>
-
                     <table class="table table-striped table-bordered" id="productTable">
                         <thead>
                             <tr>
@@ -150,7 +143,6 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
             </footer>
         </div>
     </div>
-
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -211,8 +203,5 @@ if ($_SESSION['user'] == "" || $_SESSION['user'] != "administrador") {
             document.body.classList.toggle('sb-sidenav-toggled');
         });
     </script>
-
-
 </body>
-
 </html>
