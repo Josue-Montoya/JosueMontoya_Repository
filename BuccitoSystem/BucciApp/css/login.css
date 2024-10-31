@@ -1,0 +1,63 @@
+body {
+    background-image: url(../../BucciApp/resources/img/fondo2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.formulario {
+    background: rgba(0, 0, 0, .5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
+    color: white;
+}
+
+.form-control{
+    background: rgba(0, 0, 0, .7);
+    border-style: none;
+    transition: 0.5s ease-in;
+    outline: none;
+    box-shadow: none;
+}
+
+.form-control:focus{
+    background:none;
+    color: white;
+}
+
+.form-control::placeholder{
+    color:white;
+}
+
+.ingresar {
+    background: rgba(0, 0, 0, .5);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700 !important;
+    color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+
+.ingresar:hover {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s ease-in;
+    transition: 0.3s ease-out;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 3);
+}
+
+.olvide{
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 700!important;
+    font-size: 14px;
+}
+
+.olvide:hover{
+    color: cornflowerblue;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.2s ease-in;
+    transition: 0.3s ease-out;
+}

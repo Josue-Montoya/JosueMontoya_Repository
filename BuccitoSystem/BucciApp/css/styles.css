@@ -1,0 +1,217 @@
+:root {
+    --sb-nav-fixed-height: 56px;
+    --sb-sidenav-width: 225px;
+    --sb-sidenav-dark-bg: #212529;
+    --sb-topnav-dark-bg: #212529;
+}
+
+/* Estilos base */
+body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    background-color: #f8f9fa;
+}
+
+.sb-nav-fixed {
+    padding-top: var(--sb-nav-fixed-height);
+}
+
+/* Navbar Styles */
+.sb-topnav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    height: var(--sb-nav-fixed-height);
+    background-color: var(--sb-topnav-dark-bg);
+}
+
+.sb-topnav .navbar-brand {
+    width: var(--sb-sidenav-width);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#sidebarToggle {
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0.75rem;
+}
+
+#sidebarToggle:hover {
+    color: #fff;
+}
+
+/* User Dropdown */
+.sb-topnav .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0.75rem;
+}
+
+.sb-topnav .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+/* Layout Principal */
+#layoutSidenav {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidenav Styles */
+#layoutSidenav_nav {
+    flex-basis: var(--sb-sidenav-width);
+    flex-shrink: 0;
+    transition: transform .15s ease-in-out;
+    z-index: 1038;
+    position: fixed;
+    width: var(--sb-sidenav-width);
+    height: calc(100vh - var(--sb-nav-fixed-height));
+    top: var(--sb-nav-fixed-height);
+}
+
+.sb-sidenav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-wrap: nowrap;
+    background-color: var(--sb-sidenav-dark-bg);
+}
+
+.sb-sidenav-dark {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Menú Sidenav */
+.sb-sidenav-menu {
+    flex-grow: 1;
+    padding-top: 0;
+}
+
+.sb-sidenav-menu .nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.sb-sidenav-menu-heading {
+    padding: 1.75rem 1rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.sb-sidenav-menu .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    text-decoration: none;
+}
+
+.sb-sidenav-menu .nav-link:hover {
+    color: #fff;
+}
+
+.sb-sidenav-menu .nav-link.active {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sb-sidenav-menu .nav-link .sb-nav-link-icon {
+    margin-right: 0.5rem;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+/* Contenido Principal */
+#layoutSidenav_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    flex-grow: 1;
+    min-height: calc(100vh - var(--sb-nav-fixed-height));
+    margin-left: var(--sb-sidenav-width);
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+}
+
+/* Toggle States */
+.sb-sidenav-toggled #layoutSidenav_nav {
+    transform: translateX(-225px);
+}
+
+.sb-sidenav-toggled #layoutSidenav_content {
+    margin-left: 0;
+}
+
+/* User Dropdown */
+.sb-topnav .navbar-nav {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.sb-topnav .nav-item .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    #layoutSidenav_nav {
+        transform: translateX(-225px);
+    }
+    
+    #layoutSidenav_content {
+        margin-left: 0;
+    }
+    
+    .sb-sidenav-toggled #layoutSidenav_nav {
+        transform: translateX(0);
+    }
+}
+
+/* Tabla y Contenedores */
+.container-fluid {
+    padding: 1.5rem;
+}
+
+.table-actions {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table {
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 0.35rem;
+}
+
+/* DataTables Customization */
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 1rem;
+}
+
+.dt-buttons .btn {
+    margin-right: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Botones y Acciones */
+.btn-action {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    margin: 0 0.25rem;
+}
