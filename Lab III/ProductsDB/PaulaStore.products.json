@@ -1,0 +1,122 @@
+[
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc75" },
+    "name": "Gorrito de crochet",
+    "stock": 10,
+    "price": 2.5
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc76" },
+    "name": "Zapatitos de crochet",
+    "stock": 5,
+    "price": 5
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc77" },
+    "name": "Bufanda tejida",
+    "stock": 8,
+    "price": 7.5
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc78" },
+    "name": "Guantes de lana",
+    "stock": 12,
+    "price": 4
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc79" },
+    "name": "Cojín bordado",
+    "stock": 6,
+    "price": 15
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc7a" },
+    "name": "Manta pequeña",
+    "stock": 3,
+    "price": 20
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc7b" },
+    "name": "Bolso de crochet",
+    "stock": 7,
+    "price": 12
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc7c" },
+    "name": "Juguete de lana",
+    "stock": 9,
+    "price": 8
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc7d" },
+    "name": "Sombrero tejido",
+    "stock": 4,
+    "price": 10
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc7e" },
+    "name": "Estuche de crochet",
+    "stock": 15,
+    "price": 5.5
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc7f" },
+    "name": "Collar de lana",
+    "stock": 11,
+    "price": 6
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc80" },
+    "name": "Diadema tejida",
+    "stock": 10,
+    "price": 3.5
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc81" },
+    "name": "Llavero de crochet",
+    "stock": 20,
+    "price": 2
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc82" },
+    "name": "Monedero pequeño",
+    "stock": 18,
+    "price": 4
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc83" },
+    "name": "Tapete decorativo",
+    "stock": 5,
+    "price": 10
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc84" },
+    "name": "Bolso bandolera",
+    "stock": 3,
+    "price": 18
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc85" },
+    "name": "Muñeca tejida",
+    "stock": 2,
+    "price": 25
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc86" },
+    "name": "Pantuflas de lana",
+    "stock": 8,
+    "price": 9
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc87" },
+    "name": "Cubre tazas tejido",
+    "stock": 10,
+    "price": 3
+  },
+  {
+    "_id": { "$oid": "674f3dde2ee5ee17346bcc88" },
+    "name": "Cortina de crochet",
+    "stock": 1,
+    "price": 50
+  }
+]
