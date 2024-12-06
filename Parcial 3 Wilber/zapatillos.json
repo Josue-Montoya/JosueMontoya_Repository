@@ -1,0 +1,122 @@
+[
+  {
+    "brand": "Nike",
+    "model": "Air Max 270",
+    "price": 150,
+    "stock": 50,
+    "sizes": [7, 8, 9, 10, 11, 12],
+    "color": "Black/White",
+    "imageUrl": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/i1-17e25a58-7a9b-431d-9c44-c93d7a4e0bd2/air-max-270-mens-shoes-5PJzRZ.png",
+    "category": "running"
+  },
+  {
+    "brand": "Adidas",
+    "model": "Ultraboost 22",
+    "price": 180,
+    "stock": 35,
+    "sizes": [8, 9, 10, 11],
+    "color": "Blue/Navy",
+    "imageUrl": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/3c29c5bde0a54c1cb542aec800abf863_9366/ultraboost-22-shoes.jpg",
+    "category": "running"
+  },
+  {
+    "brand": "Jordan",
+    "model": "Air Jordan 1 Retro",
+    "price": 170,
+    "stock": 25,
+    "sizes": [9, 10, 11, 12],
+    "color": "Red/Black",
+    "imageUrl": "https://jordan.nike.com/content/dam/jordan-content/sites/jordan/featured-content/2022/aj1-releases/aj1-heritage-retro/AJ1_Hero-1600x900.jpg",
+    "category": "basketball"
+  },
+  {
+    "brand": "Converse",
+    "model": "Chuck Taylor All Star",
+    "price": 55,
+    "stock": 60,
+    "sizes": [6, 7, 8, 9, 10],
+    "color": "White",
+    "imageUrl": "https://www.converse.com/dw/image/v2/BJJF_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw30ca23c9/images/hi-res/M7650_standard.jpg",
+    "category": "casual"
+  },
+  {
+    "brand": "New Balance",
+    "model": "990v5",
+    "price": 185,
+    "stock": 40,
+    "sizes": [8, 9, 10, 11, 12],
+    "color": "Grey",
+    "imageUrl": "https://www.newbalance.com/dw/image/v2/AAYP_PRD/on/demandware.static/-/Sites-nbg-master-catalog/default/dw74381d82/images/M990GL5/M990GL5_0.jpg",
+    "category": "running"
+  },
+  {
+    "brand": "Puma",
+    "model": "RS-X",
+    "price": 120,
+    "stock": 45,
+    "sizes": [7, 8, 9, 10],
+    "color": "Multicolor",
+    "imageUrl": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1500,h_1500/global/383579/02/sv01/fnd/PNA/fmt/png",
+    "category": "casual"
+  },
+  {
+    "brand": "Reebok",
+    "model": "Classic Leather",
+    "price": 75,
+    "stock": 55,
+    "sizes": [8, 9, 10, 11],
+    "color": "White/Gum",
+    "imageUrl": "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/5e67edf0e08f4c92a484ad7701818741_9366/Classic_Leather_Shoes_White_GY0952_01_standard.jpg",
+    "category": "casual"
+  },
+  {
+    "brand": "Nike",
+    "model": "Kyrie 7",
+    "price": 130,
+    "stock": 30,
+    "sizes": [9, 10, 11, 12],
+    "color": "Black/Red",
+    "imageUrl": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/2e238794-1a7f-4461-bbb1-5d94279a9e6f/kyrie-7-basketball-shoes-ZP6Brh.png",
+    "category": "basketball"
+  },
+  {
+    "brand": "Vans",
+    "model": "Old Skool",
+    "price": 65,
+    "stock": 70,
+    "sizes": [6, 7, 8, 9, 10],
+    "color": "Black/White",
+    "imageUrl": "https://images.vans.com/is/image/Vans/VN000D3HY28_HERO?wid=1500&hei=1500&fmt=jpeg&qlt=50,-1&op_sharpen=0&resMode=sharp2&op_usm=1,1,6,0",
+    "category": "casual"
+  },
+  {
+    "brand": "Asics",
+    "model": "Gel-Nimbus 23",
+    "price": 160,
+    "stock": 35,
+    "sizes": [8, 9, 10, 11],
+    "color": "Blue/White",
+    "imageUrl": "https://images.asics.com/is/image/asics/1011B004_001_SR_RT_GLB?$zoom$",
+    "category": "running"
+  },
+  {
+    "brand": "Under Armour",
+    "model": "Curry 8",
+    "price": 160,
+    "stock": 25,
+    "sizes": [9, 10, 11, 12],
+    "color": "White/Gold",
+    "imageUrl": "https://underarmour.scene7.com/is/image/Underarmour/3023086-100_DEFAULT?rp=standard-0pad|pdpMainDesktop&scl=1&fmt=jpg&qlt=85&cache=on,on&bgc=F0F0F0&wid=513&hei=513&size=536,600",
+    "category": "basketball"
+  },
+  {
+    "brand": "Skechers",
+    "model": "Go Walk",
+    "price": 70,
+    "stock": 65,
+    "sizes": [7, 8, 9, 10],
+    "color": "Black",
+    "imageUrl": "https://www.skechers.com/dw/image/v2/BDCX_PRD/on/demandware.static/-/Sites-skechers-master/default/dw4439e5c5/images/large/54600_BLK.jpg",
+    "category": "casual"
+  }
+]
